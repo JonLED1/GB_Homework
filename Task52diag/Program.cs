@@ -1,31 +1,20 @@
 ﻿void InputMatrix(int[,] matrix)
 {
-    //заполняем первый элемент
-    int count = 0;
-    matrix[0, 0] = count;
-    count++;
-    // перебераем верхнюю строку, с заполнением диагоналей вниз-влево
-    for (int j = 1; j < matrix.GetLength(1); j++) 
+    int countNumb = 0;
+    int countDiag = matrix.GetLength(0) + matrix.GetLength(1);
+    for (int k = 0; k < countDiag; k++)
     {
-        matrix[0, j] = count;
-        count++;
-        int k = 1;
-        int z = j-1;
-        while (z >= 0)
-        {   
-            Console.WriteLine($"[{k},{z}]");
-            matrix[k, z] = count;
-            count++;
-            k++;
-            z--;
-            
-            
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+                if (i + j == k)
+                {
+                    matrix[i, j] = countNumb;
+                    countNumb++;
+                }
         }
-        Console.WriteLine("______________");
-       
 
     }
-    // перебераем нижнюю строку, с заполнением диагоналей вверх-вправо
 }
 
 void PrintMatrix(int[,] matrix)
@@ -38,10 +27,9 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-//Console.Clear();
+Console.Clear();
 Console.Write("Введите размер массива: ");
 int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
 PrintMatrix(matrix);
-
