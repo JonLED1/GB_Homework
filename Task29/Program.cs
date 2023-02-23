@@ -1,4 +1,6 @@
-﻿Console.Clear();
+﻿// Требуется вычислить, сколько раз встречается некоторое число X в массиве A[1..N]. 
+
+Console.Clear();
 Console.WriteLine("Введите количество элементов массива не более 1000");
 int n=Convert.ToInt32(Console.ReadLine());
 while (n < 1 || n > 1000)

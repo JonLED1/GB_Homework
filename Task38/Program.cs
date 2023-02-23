@@ -1,4 +1,7 @@
-﻿Console.Clear();
+﻿// Задайте массив целых чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3, 7, 22, 2, 78] -> 76
+
+Console.Clear();
 Console.Write("Введите длину массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[n];

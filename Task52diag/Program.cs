@@ -1,4 +1,9 @@
-﻿void InputMatrix(int[,] matrix)
+﻿//Напишите программу заполнения массива по диаганолям
+// 0       1       3       6       9  
+// 2       4       7       10      12 
+// 5       8       11      13      14 
+
+void InputMatrix(int[,] matrix)
 {
     int countNumb = 0;
     int countDiag = matrix.GetLength(0) + matrix.GetLength(1);

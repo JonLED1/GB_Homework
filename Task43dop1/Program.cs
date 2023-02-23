@@ -1,4 +1,6 @@
-﻿int InputNumb(string x)
+﻿//По целочисленным координатам вершин треугольника (x1,y1), (x2,y2) и (x3,y3) требуется вычислить его площадь. 
+
+int InputNumb(string x)
 {
     Console.Write($"Веедите координату {x} ");
     int n = Convert.ToInt32(Console.ReadLine());
