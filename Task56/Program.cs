@@ -26,24 +26,26 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int MaxSumm(int[,] matrix)
+int MinSumm(int[,] matrix)
 {
-    int lineMaxSum = 0;
-    int maxSum = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int lineMinSum = 0;
+    int minSum = 0;
+    for (int i = 0; i < matrix.GetLength(1); i++)
+        minSum += matrix[0, i];
+    for (int i = 1; i < matrix.GetLength(0); i++)
     {
         int sum = 0;
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             sum += matrix[i, j];
         }
-        if (sum > maxSum)
+        if (sum < minSum)
         {
-            lineMaxSum = i;
-            maxSum=sum;
+            lineMinSum = i;
+            minSum=sum;
         }
     }
-    return lineMaxSum;
+    return lineMinSum;
 }
 
 Console.Clear();
@@ -53,4 +55,4 @@ int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
 PrintMatrix(matrix);
 Console.WriteLine();
-Console.WriteLine($"Строка с максимальной суммой - {MaxSumm(matrix)+1}");
+Console.WriteLine($"Строка с минимальной суммой - {MinSumm(matrix)+1}");
