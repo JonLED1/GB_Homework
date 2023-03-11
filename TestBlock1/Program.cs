@@ -3,7 +3,7 @@
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write($"Введите элемент массива № {i} - ");
-        array[i] = Console.ReadLine();
+        array[i] = Console.ReadLine()!;
     }
 }
 
